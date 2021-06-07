@@ -1,6 +1,14 @@
-From node:slim
+# Specify a base image
+FROM node:12.18.1
 
-RUN npm install -g grunt-cli 
+WORKDIR /usr/app
+
+# Install some dependencies
+COPY ./package.json ./
+RUN npm install
+COPY ./ ./
+RUN npm install -g grunt-cli
 RUN grunt dev
 
-CMD ["node"]
+# Default command
+CMD ["npm","start"]
