@@ -11,4 +11,4 @@ RUN npm install -g grunt-cli
 RUN grunt dev
 
 # Default command
-CMD ["npm","start"]
+CMD ["bash"]
